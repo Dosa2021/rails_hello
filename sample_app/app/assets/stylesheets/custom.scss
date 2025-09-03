@@ -180,11 +180,17 @@ footer {
 //   margin-top: 45px;
 // }
 
-// @media screen and (max-width: 768px) {
-//   h1 {
-//     font-size: 20px;
-//   }
-//   h2 {
-//     font-size: 15px;
-//   }
-// }
+@media screen and (max-width: 768px) {
+  nav {
+    #logo {
+      font-size: 30px;
+    }
+  }
+  main {
+    width: 360px;
+    height: 469.5px;
+    .signup {
+      padding-top: 15px;
+    }
+  }
+}
