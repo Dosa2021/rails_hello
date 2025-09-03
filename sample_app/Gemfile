@@ -5,7 +5,6 @@ ruby "3.1.2"
 
 gem "rails",           "7.1.5.2"
 gem "bcrypt",          "3.1.18"
-gem "bootstrap",       "~> 5.3.0"
 gem "jquery-rails"
 gem "sassc-rails",     "2.1.2"
 gem "sprockets-rails", "3.4.2"
