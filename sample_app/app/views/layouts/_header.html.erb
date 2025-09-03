@@ -1,12 +1,12 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "sample app", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",    root_path %></li>
-        <li><%= link_to "Help",    help_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <%= link_to "sakayaction", root_path, id: "logo", class: "navbar-brand" %>
+    <div class="collapse navbar-collapse text-right" id="navbarNav">
+      <ul class="navbar-nav text-right">
+        <li class="nav-item align-bottom"><%= link_to "Home", root_path, class: "nav-link align-text-bottom pt-3" %></li>
+        <li class="nav-item"><%= link_to "Help", help_path, class: "nav-link pt-3" %></li>
+        <li class="nav-item"><%= link_to "Log in", '#',  class: "nav-link pt-3" %></li>
       </ul>
-    </nav>
+    </div>
   </div>
-</header>
+</nav>
