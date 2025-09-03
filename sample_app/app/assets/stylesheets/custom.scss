@@ -70,9 +70,9 @@ nav {
     display: inline-block;
     text-decoration: none;
     color: #111;
-    font-family: cursive;
+    font-family: sans-serif;
     font-size: 60px;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     padding: 15px;
   }
 }
@@ -80,7 +80,6 @@ nav {
 // main
 
 main {
-  background-color: skyblue;
   background-image: url(sakana-2.png);
   background-size:cover;
   margin: auto;
