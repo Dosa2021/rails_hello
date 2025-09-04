@@ -17,5 +17,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
+    # httpステータスは see_other
+    redirect_to root_url, status: :see_other
   end  
 end

@@ -18,6 +18,10 @@
     font-family: sans-serif;
   }
 
+  li {
+    list-style: none;
+  }
+
   // section {
   //   overflow: auto;
   // }
@@ -89,12 +93,22 @@
       text-align: center;
       padding-top: 30px;
       a {
+        display: block;
         text-decoration: none;
         font-family: serif;
         color: #fff;
         background-color: #111;
-        padding: 10px 15px;
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+        margin: auto;
+        margin-bottom: 10px;
         border-radius: 10px;
+      }
+      .login {
+        color: #111;
+        background-color: #fff;
+        border: 1px solid darkgray;
       }
     }
   }
@@ -102,8 +116,23 @@
   // footer
 
   footer {
+    color: #536471;
     text-align: center;
     padding: 5px;
+    a, small {
+      color: #536471;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 0px;
+      li {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   // /* sidebar */
