@@ -6,11 +6,12 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       # ユーザーログイン後にユーザー情報のページにリダイレクトする
-      puts 'ok-----'
+      reset_session # ログインの直前に必ずこれを書くこと
+      log_in user
+      redirect_to user
     else
-      # エラーメッセージを作成する
-      puts 'ng--------------------------------'
-      flash[:danger] = 'Invalid email/password combination' # 本当は正しくない
+      # nowメソッドを使用してメッセージを一時的なものにする
+      flash.now[:danger] = 'Invalid email/password combination' # 本当は正しくない
       render 'new', status: :unprocessable_entity
     end
   end
