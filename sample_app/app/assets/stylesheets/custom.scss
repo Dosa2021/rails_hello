@@ -26,6 +26,16 @@
     text-decoration: none;
   }
 
+  .pagination {
+    padding: 5px;
+    a {
+      color: #111;
+    }
+    .current {
+      color: darkgray;
+    }
+  }
+
   // section {
   //   overflow: auto;
   // }
@@ -201,11 +211,19 @@
 
   .users {
     list-style: none;
-    margin: 0;
+    margin: auto;
+    padding: 0;
+    width: 500px;
+    h2 {
+      text-align: center;
+    }
     li {
       overflow: auto;
       padding: 10px 0;
       border-bottom: 1px solid #ddd;
+      a {
+        color: #111;
+      }
     }
   }
   .users-show {
@@ -331,5 +349,8 @@
       iframe {
         width: 100%;
       }
+    }
+    .users {
+      width: 300px;
     }
   }
