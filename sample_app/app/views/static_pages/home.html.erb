@@ -2,7 +2,9 @@
   <div class='signup'>
     <% unless logged_in? %>
       <%= link_to "ログイン", login_path, class: "login" %>
+      <%= link_to "アカウントを作成", signup_path %>
+    <% else %>
+      <h2>まだまだ踊れる？</h2>
     <% end %>
-    <%= link_to "アカウントを作成", signup_path %>
   </div>
 </main>
