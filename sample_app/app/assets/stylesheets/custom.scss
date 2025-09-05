@@ -22,6 +22,10 @@
     list-style: none;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   // section {
   //   overflow: auto;
   // }
@@ -153,6 +157,14 @@
       .name {
         font-weight: normal;
       }
+      a {
+        color: #111;
+        font-weight: normal;
+        font-size: 13px;
+        border: 1px solid #111;
+        padding: 5px 10px;
+        border-radius: 10px;
+      }
     }
     section {
       padding: 10px 0;
@@ -199,7 +211,7 @@
 
   // forms
 
-  .signup-form, .login-form {
+  .signup-form, .login-form, .edit-form {
     h1 {
       text-align: center;
     }
@@ -237,6 +249,12 @@
 
   // alert
 
+  .alert {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+  }
+
   .alert-success {
     color: green;
     background-color: springgreen;
@@ -268,6 +286,11 @@
   }
 
   @media screen and (max-width: 768px) {
+
+    .alert {
+      width: 300px;
+    }
+
     nav {
       #logo {
         font-size: 30px;
@@ -285,7 +308,7 @@
       }
     }
 
-    .signup-form, .login-form {
+    .signup-form, .login-form, .edit-form {
       form {
         width: 300px;
       }
