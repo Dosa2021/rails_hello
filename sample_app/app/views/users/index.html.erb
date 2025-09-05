@@ -2,9 +2,7 @@
 <ul class="users">
   <h2>All users</h2>
   <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user %>
-    </li>
+    <%= render user %>
   <% end %>
   <%= paginate @users %>
 </ul>
