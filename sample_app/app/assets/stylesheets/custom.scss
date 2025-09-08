@@ -22,6 +22,20 @@
     list-style: none;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  .pagination {
+    padding: 5px;
+    a {
+      color: #111;
+    }
+    .current {
+      color: darkgray;
+    }
+  }
+
   // section {
   //   overflow: auto;
   // }
@@ -143,6 +157,7 @@
   // /* sidebar */
 
   aside {
+    padding: 20px;
     section.user_info {
       margin-top: 20px;
       img {
@@ -151,6 +166,14 @@
       }
       .name {
         font-weight: normal;
+      }
+      a {
+        color: #111;
+        font-weight: normal;
+        font-size: 13px;
+        border: 1px solid #111;
+        padding: 5px 10px;
+        border-radius: 10px;
       }
     }
     section {
@@ -185,6 +208,24 @@
   // }
 
   // users
+
+  .users {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    width: 500px;
+    h2 {
+      text-align: center;
+    }
+    li {
+      overflow: auto;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      a {
+        color: #111;
+      }
+    }
+  }
   .users-show {
     text-align: center;
     h1 {
@@ -198,7 +239,7 @@
 
   // forms
 
-  .signup-form, .login-form {
+  .signup-form, .login-form, .edit-form {
     h1 {
       text-align: center;
     }
@@ -236,11 +277,20 @@
 
   // alert
 
+  .alert {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+  }
+
   .alert-success {
     color: green;
     background-color: springgreen;
     padding: 10px;
     border-radius: 5px;
+  }
+  .alert-danger {
+    color: red;
   }
 
   #error_explanation {
@@ -267,6 +317,11 @@
   }
 
   @media screen and (max-width: 768px) {
+
+    .alert {
+      width: 300px;
+    }
+
     nav {
       #logo {
         font-size: 30px;
@@ -284,7 +339,7 @@
       }
     }
 
-    .signup-form, .login-form {
+    .signup-form, .login-form, .edit-form {
       form {
         width: 300px;
       }
@@ -294,5 +349,8 @@
       iframe {
         width: 100%;
       }
+    }
+    .users {
+      width: 300px;
     }
   }
