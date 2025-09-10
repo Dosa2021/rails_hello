@@ -1,10 +1,22 @@
-<main>
-  <div class='signup'>
-    <% unless logged_in? %>
-      <%= link_to "ログイン", login_path, class: "login" %>
-      <%= link_to "アカウントを作成", signup_path %>
-    <% else %>
-      <h2>まだまだ踊れる？</h2>
-    <% end %>
-  </div>
-</main>
+  <% if logged_in? %>
+    <div class="logged-in-home">
+      <aside>
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </aside>
+      <div>
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+  <% else %>
+    <main>
+      <div class='signup'>
+        <%= link_to "ログイン", login_path, class: "login" %>
+        <%= link_to "アカウントを作成", signup_path %>
+      </div>
+    </main>
+<% end %>
