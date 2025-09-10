@@ -8,7 +8,11 @@
         <%= link_to "編集", edit_user_path(current_user) %>
       </h1>
     </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
   </aside>
+  <%= render 'follow_form' if logged_in? %>
   <iframe
     src="https://www.youtube.com/embed/Hz-VBzYHA0k?si=Fx5ZRjnSNQttFH1P"
     title="YouTube video player"
