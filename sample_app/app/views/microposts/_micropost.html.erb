@@ -7,5 +7,10 @@
         turbo_confirm: "You sure?" } %>
     <% end %>
   </span>
-  <span class="content"><%= micropost.content %></span>
+  <span class="content">
+    <%= micropost.content %>
+    <% if micropost.image.attached? %>
+      <%= image_tag micropost.image.variant(:display) %>
+    <% end %>
+  </span>
 </li>
