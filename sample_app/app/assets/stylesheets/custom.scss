@@ -273,6 +273,8 @@ span.image {
   // }
 
   .stats {
+    display: flex;
+    justify-content: center;
     overflow: auto;
     margin-top: 0;
     padding: 0;
@@ -329,8 +331,11 @@ span.image {
       }
     }
   }
+
   .users-show {
     text-align: center;
+    margin: auto;
+    width: 650px;
     h1 {
       text-align: center;
     }
@@ -456,6 +461,7 @@ span.image {
     }
 
     .users-show {
+      width: 100%;
       iframe {
         width: 100%;
       }
