@@ -98,7 +98,6 @@
     color: #ddd;
     margin-left: 10px;
   }
-
   .content {
     display: block;
     overflow-wrap: anywhere;
@@ -107,7 +106,6 @@
       padding: 5px 0;
     }
   }
-
   .gravatar {
     float: left;
     margin-right: 10px;
@@ -433,6 +431,14 @@ span.image {
     nav {
       #logo {
         font-size: 30px;
+      }
+    }
+
+    .microposts {
+      .content {
+        img {
+          width: 100%;
+        }
       }
     }
 
