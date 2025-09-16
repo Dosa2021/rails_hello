@@ -16,6 +16,8 @@
 
   * {
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
   }
 
   li {
@@ -131,18 +133,25 @@ span.image {
 
   nav {
     text-align: center;
+    position: fixed;
+    width: 100%;
     #logo {
       display: inline-block;
       text-decoration: none;
       color: #111;
       font-family: sans-serif;
-      font-size: 60px;
+      font-size: 30px;
       letter-spacing: 5px;
       padding: 15px;
     }
   }
 
   // main
+
+  .contents {
+    // ヘッダとの間隔
+    padding-top: 75px;
+  }
 
   main {
     background-image: url(sakana-2.png);
@@ -180,9 +189,34 @@ span.image {
   }
 
   .logged-in-home {
+    display: flex;
     margin: auto;
-    width: 700px;
+    width: 950px;
+    .side-bar {
+      position: fixed;
+      width: 30%;
+      ul {
+        a {
+          color: #111;
+          display: inline-block;
+          font-size: 25px;
+          padding: 10px 5px;
+          div {
+            display: inline-block;
+          }
+        }
+      }
+      .user {
+        margin: 0;
+        padding: 5px;
+        h2 {
+          font-weight: normal;
+          font-size: 25px;
+        }
+      }
+    }
     aside {
+      display: none;
       .user_info {
         text-align: center;
         h2 {
@@ -192,6 +226,10 @@ span.image {
           margin-top: 10px;
         }
       }
+    }
+    div {
+      margin: 0 0 0 auto;
+      width: 60%;
     }
   }
 
@@ -426,12 +464,6 @@ span.image {
 
     .alert {
       width: 300px;
-    }
-
-    nav {
-      #logo {
-        font-size: 30px;
-      }
     }
 
     .microposts {

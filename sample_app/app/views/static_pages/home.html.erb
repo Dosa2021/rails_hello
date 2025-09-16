@@ -1,5 +1,24 @@
   <% if logged_in? %>
     <div class="logged-in-home">
+      <div class="side-bar">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-house"></i>
+              <div>Home</div>
+            </a>
+          </li>
+          <li>
+            <a href="<%= user_path(current_user) %>">
+              <i class="fa-solid fa-user"></i>
+              <div>Profile</div>
+            </a>
+          </li>
+        </ul>
+        <div class="user">
+          <h2><%= current_user.name %></h2>
+        </div>
+      </div>
       <aside>
         <section class="user_info">
           <%= render 'shared/user_info' %>
