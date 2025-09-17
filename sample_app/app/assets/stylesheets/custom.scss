@@ -197,13 +197,20 @@ span.image {
       position: fixed;
       width: 15%;
       ul {
-        a {
-          color: #111;
-          display: block;
-          font-size: 25px;
-          padding: 10px 5px;
-          div {
-            display: inline-block;
+        li {
+          margin-bottom: 10px;
+          a {
+            color: #111;
+            font-size: 20px;
+            padding: 10px 5px;
+            border-radius: 10px;
+            &:hover {
+              background-color: #111;
+              color: #fff;
+            }
+            div {
+              display: inline-block;
+            }
           }
         }
       }
@@ -212,7 +219,7 @@ span.image {
         padding: 5px;
         h2 {
           font-weight: normal;
-          font-size: 25px;
+          font-size: 20px;
         }
       }
     }
