@@ -31,6 +31,14 @@
         </section>
       </aside>
       <div class="feed">
+        <div class="post">
+          <div class="img">
+            <%= image_tag 'john.jpg' %>
+          </div>
+          <div class="form">
+            <%= render 'shared/micropost_form' %>
+          </div>
+        </div>
         <%= render 'shared/feed' %>
       </div>
     </div>
