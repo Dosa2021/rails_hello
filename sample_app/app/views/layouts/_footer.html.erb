@@ -14,3 +14,30 @@
   </ul>
   <small>&copy; 2025 dosaken</small>
 </footer>
+<% if logged_in? %>
+  <div class="footer-sp">
+    <ul>
+      <li>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to user_path(current_user) do %>
+          <i class="fa-solid fa-user"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to users_path do %>
+          <i class="fa-solid fa-users"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to logout_path, data: { "turbo-method": :delete } do %>
+          logout
+        <% end %>
+      </li>
+    </ul>
+  <div>
+<% end %>
+

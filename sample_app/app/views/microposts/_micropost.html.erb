@@ -1,16 +1,23 @@
 <li id="micropost-<%= micropost.id %>">
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="timestamp">
-    <%= time_ago_in_words(micropost.created_at) %>前
-    <% if current_user.id == micropost.user.id %>
-      <%= link_to "delete", micropost, data: { "turbo-method": :delete,
-        turbo_confirm: "You sure?" } %>
-    <% end %>
-  </span>
-  <span class="content">
-    <%= micropost.content %>
-    <% if micropost.image.attached? %>
-      <%= image_tag micropost.image.variant(:display) %>
-    <% end %>
-  </span>
+  <div class="img">
+    <%= image_tag 'john.jpg' %>
+  </div>
+  <div class="contents">
+    <div class="info">
+      <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+      <span class="timestamp">
+        <%= time_ago_in_words(micropost.created_at) %>前
+      </span>
+      <% if current_user.id == micropost.user.id %>
+        <%= link_to "delete", micropost, class: "delete", data: { "turbo-method": :delete,
+          turbo_confirm: "You sure?" } %>
+      <% end %>
+    </div>
+    <span class="content">
+      <%= micropost.content %>
+      <% if micropost.image.attached? %>
+        <%= image_tag micropost.image.variant(:display) %>
+      <% end %>
+    </span>
+  </div>
 </li>
