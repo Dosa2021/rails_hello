@@ -335,6 +335,9 @@
       }
     }
   }
+  .footer-sp {
+    display: none;
+  }
 
   // /* sidebar */
 
@@ -530,8 +533,29 @@
 
     .logged-in-home {
       width: 360px;
+      display: block;
+      .side-bar {
+        display: none;
+      }
       aside {
         padding: 0;
+      }
+      .feed {
+        width: 100%;
+        .form {
+          width: 100%;
+          form {
+            textarea {
+              width: 96% !important;
+            }
+            .bottom {
+              width: 100%;
+              .image {
+                width: 100px;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -549,5 +573,31 @@
     }
     .users {
       width: 300px;
+    }
+
+    footer {
+      ul {
+        display: none;
+      }
+    }
+    .footer-sp {
+      background-color: #fff;
+      display: block;
+      width: 100%;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      ul {
+        display: flex;
+        justify-content: space-around;
+        a {
+          font-size: 30px;
+          font-weight: bold;
+          color: #111;
+          i {
+            padding: 10px;
+          }
+        }
+      }
     }
   }
