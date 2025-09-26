@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_one_attached :image do |attachable|
+    attachable.variant :display, resize_to_limit: [500, 500]
+  end
   has_many :microposts, dependent: :destroy
   has_many :active_relationships,
     class_name:  "Relationship",

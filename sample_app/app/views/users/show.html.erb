@@ -3,7 +3,7 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h2>
-        <%= image_tag 'john.jpg' %>
+        <%= image_tag @user.image if @user.image.attached? %>
         <div class="name"><%= @user.name %></div>
         <%= link_to "編集", edit_user_path(current_user) %>
       </h2>

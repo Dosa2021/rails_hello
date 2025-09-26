@@ -1,6 +1,6 @@
 <li id="micropost-<%= micropost.id %>">
   <div class="img">
-    <%= image_tag 'john.jpg' %>
+    <%= image_tag micropost.user.image if micropost.user.image.attached? %>
   </div>
   <div class="contents">
     <div class="info">
