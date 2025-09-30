@@ -514,6 +514,14 @@
     }
 
     .microposts {
+      .img {
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
       .content {
         img {
           width: 100%;
@@ -552,16 +560,26 @@
       }
       .feed {
         width: 100%;
-        .form {
-          width: 100%;
-          form {
-            textarea {
-              width: 96% !important;
+        .post {
+          .img {
+            img {
+              width: 50px;
+              height: 50px;
+              object-fit: cover;
+              border-radius: 10px;
             }
-            .bottom {
-              width: 100%;
-              .image {
-                width: 100px;
+          }
+          .form {
+            width: 100%;
+            form {
+              textarea {
+                width: 96% !important;
+              }
+              .bottom {
+                width: 100%;
+                .image {
+                  width: 100px;
+                }
               }
             }
           }
