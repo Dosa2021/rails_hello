@@ -500,6 +500,7 @@
 
   // debug
   .debug_dump {
+    display: none;
     clear: both;
     float: left;
     width: 100%;
@@ -517,6 +518,15 @@
         img {
           width: 100%;
         }
+      }
+    }
+
+    nav {
+      border-bottom: 1px solid #ddd;
+      #logo {
+        font-size: 25px;
+        letter-spacing: 3px;
+        padding: 5px;
       }
     }
 
@@ -595,16 +605,25 @@
       position: fixed;
       left: 0;
       bottom: 0;
+      border-top: 1px solid #ddd;
       ul {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         a {
-          font-size: 30px;
+          font-size: 23px;
           font-weight: bold;
           color: #111;
           i {
             padding: 10px;
           }
+        }
+        .logout {
+          color: #fff;
+          background-color: #111;
+          font-size: 18px;
+          padding: 5px;
+          border-radius: 5px;
         }
       }
     }

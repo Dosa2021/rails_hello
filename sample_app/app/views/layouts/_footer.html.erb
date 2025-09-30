@@ -33,7 +33,7 @@
         <% end %>
       </li>
       <li>
-        <%= link_to logout_path, data: { "turbo-method": :delete } do %>
+        <%= link_to logout_path, class: "logout", data: { "turbo-method": :delete } do %>
           logout
         <% end %>
       </li>
