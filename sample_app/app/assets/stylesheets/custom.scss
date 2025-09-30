@@ -176,7 +176,7 @@
       text-decoration: none;
       color: #111;
       font-family: "speedy-right";
-      font-size: 30px;
+      font-size: 100px;
       letter-spacing: 5px;
       padding: 15px;
     }
@@ -190,14 +190,11 @@
   }
 
   main {
-    background-image: url(sakana-2.png);
-    background-size:cover;
     margin: auto;
     width: 720px;
-    height: 939px;
     .signup {
       text-align: center;
-      padding-top: 90px;
+      padding-top: 150px;
       a {
         display: block;
         text-decoration: none;
@@ -210,6 +207,10 @@
         margin: auto;
         margin-bottom: 10px;
         border-radius: 10px;
+      }
+      i {
+        font-size: 250px;
+        margin-bottom: 50px;
       }
       .login {
         color: #111;
