@@ -27,6 +27,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.image.attach(params[:user][:image])
+
     if @user.save
       reset_session
       log_in @user
@@ -77,7 +79,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
     end
 
     # beforeフィルタ
