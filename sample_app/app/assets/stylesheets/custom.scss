@@ -1,16 +1,15 @@
+// /* mixins, variables, etc. */
 
-  // /* mixins, variables, etc. */
+@font-face {
+  font-family: "speedy-right";
+  src: font-url('CHI_SpeedyRight_free.otf')
+}
 
-  // $gray-medium-light: #eaeaea;
-  // $gray-light: #ddd;
-  // $gray: #ddd;
-  // $gray-darker: #ddd;
-
-  @mixin box_sizing {
-    -moz-box-sizing:    border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing:         border-box;
-  }
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 
   // universal
 
@@ -176,7 +175,7 @@
       display: inline-block;
       text-decoration: none;
       color: #111;
-      font-family: sans-serif;
+      font-family: "speedy-right";
       font-size: 30px;
       letter-spacing: 5px;
       padding: 15px;
