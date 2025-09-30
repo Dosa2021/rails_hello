@@ -7,3 +7,4 @@ https://railstutorial.jp/chapters/sign_up?version=7.0#cha-sign_up
 
 TODO
 ・投稿をTwitterに寄せる
+・プロフィール画像変更できるように

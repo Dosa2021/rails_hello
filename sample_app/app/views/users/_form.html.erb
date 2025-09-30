@@ -1,6 +1,11 @@
 <%= form_with(model: @user) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
 
+  <span class="image">
+    <%= image_tag @user.image if @user.image.attached? %>
+    <%= f.file_field :image %>
+  </span>
+
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
 

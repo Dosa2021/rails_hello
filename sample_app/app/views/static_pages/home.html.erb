@@ -1,14 +1,44 @@
   <% if logged_in? %>
     <div class="logged-in-home">
+      <div class="side-bar">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-house"></i>
+              <div>Home</div>
+            </a>
+          </li>
+          <li>
+            <a href="<%= user_path(current_user) %>">
+              <i class="fa-solid fa-user"></i>
+              <div>Profile</div>
+            </a>
+          </li>
+        </ul>
+        <div class="user">
+          <h2><%= current_user.name %></h2>
+        </div>
+      </div>
       <aside>
         <section class="user_info">
           <%= render 'shared/user_info' %>
+        </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
         </section>
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
       </aside>
-      <div>
+      <div class="feed">
+        <div class="post">
+          <div class="img">
+            <%= image_tag current_user.image if current_user.image.attached? %>
+          </div>
+          <div class="form">
+            <%= render 'shared/micropost_form' %>
+          </div>
+        </div>
         <%= render 'shared/feed' %>
       </div>
     </div>

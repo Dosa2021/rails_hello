@@ -2,13 +2,23 @@
 <div class="users-show">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
-        <%= image_tag 'john.jpg' %>
+      <h2>
+        <%= image_tag @user.image if @user.image.attached? %>
         <div class="name"><%= @user.name %></div>
         <%= link_to "編集", edit_user_path(current_user) %>
-      </h1>
+      </h2>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
     </section>
   </aside>
+  <%= render 'follow_form' if logged_in? %>
+  <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+  <% end %>
   <iframe
     src="https://www.youtube.com/embed/Hz-VBzYHA0k?si=Fx5ZRjnSNQttFH1P"
     title="YouTube video player"

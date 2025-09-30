@@ -16,6 +16,8 @@
 
   * {
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
   }
 
   li {
@@ -33,6 +35,46 @@
     }
     .current {
       color: darkgray;
+    }
+  }
+
+  // forms
+
+  .signup-form, .login-form, .edit-form {
+    h1 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      width: 500px;
+    }
+  }
+
+  // input, textarea {
+  //   border: 1px solid #bbb;
+  //   width: 100%;
+  //   height: 30px;
+  //   @include box_sizing;
+  // }
+  // input {
+  //   border-radius: 5px;
+  // }
+
+  input[type*="submit"] {
+    color: #fff;
+    font-weight: bold;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+  }
+
+  .login-form {
+    p {
+      text-align: center;
     }
   }
 
@@ -80,52 +122,46 @@
   //   line-height: 1.7em;
   // }
 
-
 /* microposts */
 
 .microposts {
-  list-style: none;
-  padding: 0;
   li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .timestamp {
-    color: #ddd;
-    margin-left: 10px;
-  }
-
-  .content {
-    display: block;
-    overflow-wrap: anywhere;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
-  }
-
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
-}
-
-aside {
-  textarea {
-    height: 100px;
+    display: flex;
     margin-bottom: 5px;
-  }
-}
-
-span.image {
-  margin-top: 10px;
-  input {
-    border: 0;
+    padding: 5px;
+    border-top: 1px solid #e8e8e8;
+    .img {
+      img {
+        width: 50px;
+        border-radius: 5px;
+      }
+    }
+    .contents {
+      width: 100%;
+      padding: 0;
+      margin-left: 10px;
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .user {
+          a {
+            font-size: 20px;
+            font-weight: bold;
+            color: #111;
+          }
+        }
+        .timestamp {
+          font-size: 10px;
+          color: darkgray;
+        }
+        .delete {
+          margin-left: auto;
+          color: red;
+          font-size: 10px;
+        }
+      }
+    }
   }
 }
 
@@ -133,18 +169,26 @@ span.image {
 
   nav {
     text-align: center;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
     #logo {
       display: inline-block;
       text-decoration: none;
       color: #111;
       font-family: sans-serif;
-      font-size: 60px;
+      font-size: 30px;
       letter-spacing: 5px;
       padding: 15px;
     }
   }
 
   // main
+
+  .contents {
+    // ヘッダとの間隔
+    padding-top: 75px;
+  }
 
   main {
     background-image: url(sakana-2.png);
@@ -182,9 +226,41 @@ span.image {
   }
 
   .logged-in-home {
+    display: flex;
     margin: auto;
-    width: 700px;
+    width: 950px;
+    .side-bar {
+      position: fixed;
+      width: 15%;
+      ul {
+        li {
+          margin-bottom: 10px;
+          a {
+            color: #111;
+            font-size: 20px;
+            padding: 10px 5px;
+            border-radius: 10px;
+            &:hover {
+              background-color: #111;
+              color: #fff;
+            }
+            div {
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .user {
+        margin: 0;
+        padding: 5px;
+        h2 {
+          font-weight: normal;
+          font-size: 20px;
+        }
+      }
+    }
     aside {
+      display: none;
       .user_info {
         text-align: center;
         h2 {
@@ -194,6 +270,47 @@ span.image {
           margin-top: 10px;
         }
       }
+    }
+    .feed {
+      margin: 0 0 0 auto;
+      width: 74%;
+      .post {
+        display: flex;
+        padding: 5px;
+        .img {
+          img {
+            width: 50px;
+            border-radius: 5px;
+          }
+        }
+        .form {
+          margin-left: 10px;
+          width: 400px;
+          textarea {
+            field-sizing: content;
+            resize: none;
+            width: 100%;
+            padding: 5px;
+          }
+        }
+      }
+      .microposts {
+        margin-top: 20px;
+      }
+    }
+  }
+  .micropost-form {
+    .bottom {
+      width: 412px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+        input[type*="submit"]{
+          background-color: #111;
+          padding: 5px 10px;
+          margin-top: 0;
+          border: 1px solid #111;
+        }
     }
   }
 
@@ -217,6 +334,9 @@ span.image {
         }
       }
     }
+  }
+  .footer-sp {
+    display: none;
   }
 
   // /* sidebar */
@@ -272,6 +392,46 @@ span.image {
   //   margin-top: 15px;
   // }
 
+  .stats {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    margin-top: 0;
+    padding: 0;
+    a {
+      float: left;
+      padding: 0 10px;
+      border-left: 1px solid #ddd;
+      color: gray;
+      &:first-child {
+        padding-left: 0;
+        border: 0;
+      }
+      &:hover {
+        text-decoration: none;
+        color: blue;
+      }
+    }
+    strong {
+      display: block;
+    }
+  }
+
+  .user_avatars {
+    overflow: auto;
+    margin-top: 10px;
+    .gravatar {
+      margin: 1px 1px;
+    }
+    a {
+      padding: 0;
+    }
+  }
+
+  .users.follow {
+    padding: 0;
+  }
+
   // users
 
   .users {
@@ -291,52 +451,17 @@ span.image {
       }
     }
   }
+
   .users-show {
     text-align: center;
+    margin: auto;
+    width: 650px;
     h1 {
       text-align: center;
     }
     iframe {
       width: 500px;
       height: 250px;
-    }
-  }
-
-  // forms
-
-  .signup-form, .login-form, .edit-form {
-    h1 {
-      text-align: center;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      margin: auto;
-      width: 500px;
-    }
-  }
-
-  input, textarea {
-    border: 1px solid #bbb;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 15px;
-    @include box_sizing;
-  }
-  input {
-    border-radius: 5px;
-  }
-  input[type*="submit"]{
-    color: #fff;
-    font-weight: bold;
-    background-color: blue;
-    height: 30px;
-    margin-top: 10px;
-  }
-
-  .login-form {
-    p {
-      text-align: center;
     }
   }
 
@@ -387,9 +512,11 @@ span.image {
       width: 300px;
     }
 
-    nav {
-      #logo {
-        font-size: 30px;
+    .microposts {
+      .content {
+        img {
+          width: 100%;
+        }
       }
     }
 
@@ -406,8 +533,29 @@ span.image {
 
     .logged-in-home {
       width: 360px;
+      display: block;
+      .side-bar {
+        display: none;
+      }
       aside {
         padding: 0;
+      }
+      .feed {
+        width: 100%;
+        .form {
+          width: 100%;
+          form {
+            textarea {
+              width: 96% !important;
+            }
+            .bottom {
+              width: 100%;
+              .image {
+                width: 100px;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -417,12 +565,47 @@ span.image {
       }
     }
 
+    .edit-form {
+      .image {
+        img {
+          width: 150px;
+        }
+      }
+    }
+
     .users-show {
+      width: 100%;
       iframe {
         width: 100%;
       }
     }
     .users {
       width: 300px;
+    }
+
+    footer {
+      ul {
+        display: none;
+      }
+    }
+    .footer-sp {
+      background-color: #fff;
+      display: block;
+      width: 100%;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      ul {
+        display: flex;
+        justify-content: space-around;
+        a {
+          font-size: 30px;
+          font-weight: bold;
+          color: #111;
+          i {
+            padding: 10px;
+          }
+        }
+      }
     }
   }
