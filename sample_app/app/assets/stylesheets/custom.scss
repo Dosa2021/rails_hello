@@ -531,6 +531,7 @@
           }
         }
         .content {
+          font-size: 15px;
           img {
             width: 100%;
           }
@@ -539,11 +540,10 @@
     }
 
     nav {
-      border-bottom: 1px solid #ddd;
       #logo {
         font-size: 25px;
         letter-spacing: 3px;
-        padding: 5px;
+        padding: 10px;
       }
     }
 
