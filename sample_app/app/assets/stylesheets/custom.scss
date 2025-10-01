@@ -1,16 +1,15 @@
+/* mixins, variables, etc. */
 
-  // /* mixins, variables, etc. */
+@font-face {
+  font-family: 'speedy-right';
+  src: font-url('CHI_SpeedyRight_free.otf')
+}
 
-  // $gray-medium-light: #eaeaea;
-  // $gray-light: #ddd;
-  // $gray: #ddd;
-  // $gray-darker: #ddd;
-
-  @mixin box_sizing {
-    -moz-box-sizing:    border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing:         border-box;
-  }
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 
   // universal
 
@@ -176,8 +175,8 @@
       display: inline-block;
       text-decoration: none;
       color: #111;
-      font-family: sans-serif;
-      font-size: 30px;
+      font-family: "speedy-right";
+      font-size: 100px;
       letter-spacing: 5px;
       padding: 15px;
     }
@@ -191,14 +190,11 @@
   }
 
   main {
-    background-image: url(sakana-2.png);
-    background-size:cover;
     margin: auto;
     width: 720px;
-    height: 939px;
     .signup {
       text-align: center;
-      padding-top: 90px;
+      padding-top: 150px;
       a {
         display: block;
         text-decoration: none;
@@ -211,6 +207,10 @@
         margin: auto;
         margin-bottom: 10px;
         border-radius: 10px;
+      }
+      i {
+        font-size: 250px;
+        margin-bottom: 50px;
       }
       .login {
         color: #111;
@@ -500,6 +500,7 @@
 
   // debug
   .debug_dump {
+    display: none;
     clear: both;
     float: left;
     width: 100%;
@@ -513,10 +514,36 @@
     }
 
     .microposts {
-      .content {
+      .img {
         img {
-          width: 100%;
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 10px !important;
         }
+      }
+      .contents {
+        .info {
+          .user {
+            a {
+              font-size: 15px !important;
+            }
+          }
+        }
+        .content {
+          font-size: 15px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    nav {
+      #logo {
+        font-size: 25px;
+        letter-spacing: 3px;
+        padding: 10px;
       }
     }
 
@@ -542,16 +569,26 @@
       }
       .feed {
         width: 100%;
-        .form {
-          width: 100%;
-          form {
-            textarea {
-              width: 96% !important;
+        .post {
+          .img {
+            img {
+              width: 50px;
+              height: 50px;
+              object-fit: cover;
+              border-radius: 10px;
             }
-            .bottom {
-              width: 100%;
-              .image {
-                width: 100px;
+          }
+          .form {
+            width: 100%;
+            form {
+              textarea {
+                width: 96% !important;
+              }
+              .bottom {
+                width: 100%;
+                .image {
+                  width: 100px;
+                }
               }
             }
           }
@@ -595,16 +632,25 @@
       position: fixed;
       left: 0;
       bottom: 0;
+      border-top: 1px solid #ddd;
       ul {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         a {
-          font-size: 30px;
+          font-size: 23px;
           font-weight: bold;
           color: #111;
           i {
             padding: 10px;
           }
+        }
+        .logout {
+          color: #fff;
+          background-color: #111;
+          font-size: 15px;
+          padding: 5px 10px;
+          border-radius: 5px;
         }
       }
     }
